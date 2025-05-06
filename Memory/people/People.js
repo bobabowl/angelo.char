@@ -23,9 +23,34 @@ function ifMeetingPerson() {
 function gatherIntel() {
     for (let i = 0; i < people.length; i++) {
         return Perception.find({}, function (err, perception) {
-            myImpression = perception.mostRecentEncounter;
-            keyEvents = perception.allKeyEvents;
-            ThatTimeThatThey.keyEvents;
+            myImpression = this.perception.mostRecentEncounter;
+            keyEvents = this.perception.allKeyEvents;
+            this.ThatTimeThatThey.keyEvents;
         });
     }
+}
+
+function greetPerson() {
+    for (let i = 0; i < people.length; i++) {
+        if (this.people.Event.IsPresent == true) {
+            if (this.people.Perception.PersonalOpinion == like) {
+                this.positiveGreetingBehavior();
+                while (this.people.Event.IsPresent == true) {
+                    bond++;
+                    energy -= 0.05;
+                }
+            } else if (this.people.Perception.PersonalOpinion == neutral) {
+                this.neutralGreetingBehavior();
+            } else if (this.people.Perception.PersonalOpinion == dislike || this.people.Perception.PersonalOpinion == hate) {
+                this.passiveAgressiveBehavior();
+            } else if (this.people.Perception.PersonalOpinion == like && this.people.Relationship == partner) {
+                this.showAffectionateBehavior();
+                while (this.people.Event.IsPresent == true) {
+                    love++;
+                    energy -= 0.005;
+                }
+            }
+        }
+    }
+
 }
